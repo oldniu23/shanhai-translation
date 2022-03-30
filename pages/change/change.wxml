@@ -1,0 +1,15 @@
+<!--change.wxml-->
+<view class="container lang-list">
+  <view class="title">翻译成</view>
+  <!-- data-chs  data-lang  data-index  是自定义属性 -->
+  <view class="item" data-chs='{{language.chs}}' data-lang="{{language.lang}}"
+  data-index="{{index}}" wx:for="{{langList}}" wx:key="index"
+  wx:for-item="language" bindtap='onTapItem' hover-class="view-hover">
+    <view class="item-inner">
+      <!-- 展示langList每一项的中文名字   wx:for-item="language"意思是把item叫做language 
+        viwe-hover是一种点击后选中的感觉 --> 
+      <text class="txt">{{language.chs}}</text>
+      <text class="iconfont icon-duihao" wx:if="{{index===curLang.index}}"></text>
+    </view>
+  </view>
+</view>

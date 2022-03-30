@@ -1,0 +1,33 @@
+<!--index.wxml首页-->
+<view class="container">
+  <!-- 语言切换 -->
+  <view class="change">
+    <navigator url='/pages/change/change' hover-class="navigator-hover"> 
+      <text>到{{curLang.chs}}</text>
+      <text class="iconfont icon-xiala"></text>
+    </navigator>
+  </view>
+  <!-- 输入框 -->
+  <view class="input-area">
+  <!-- hidden 布尔为true隐藏 false不隐藏 -->
+    <text class="iconfont icon-close" hidden="{{hideClearIcon}}"
+    bindtap="onTapClose"></text>
+    <view class="textarea-wrap">
+    <textarea placeholder="请输入要翻译的内容" placeholder-style="color:#8995a1" bindinput='onInput' bindconfirm='onConfirm' bindblur='onConfirm' value="{{query}}"></textarea>
+    </view>
+    <!-- 输出框 -->
+    <view class="text-area">
+      <view class="text-title">译文</view>
+      
+      <view class="text-result" wx:for="{{result}}" wx:key="index">
+        <text selectable="true">{{item.dst}}</text>
+      </view>
+      
+    </view>
+  </view>
+
+<!-- 底部版权声明 -->
+  <view class="copyright">
+    <text>© 越努力越幸运</text>
+  </view>
+</view>
